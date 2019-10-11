@@ -5,9 +5,32 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#444",
+    "navigationBarTitleText": "车友圈",
+    "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "color":"333",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "圈子",
+      "iconPath":"images/m1.png",
+      "selectedIconPath":"images/m2.png"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "相机",
+      "iconPath":"images/c1.png",
+      "selectedIconPath":"images/c2.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ],
   "sitemapLocation": "sitemap.json"
 }

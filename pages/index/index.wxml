@@ -1,13 +1,263 @@
-<!--index.wxml-->
+
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" 
+              autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background_ground}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}" style="background:url({{item}}) no-repeat center / 100%;height: 100%;"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="me" style="width:105px;display:flex;justify-content: space-between;line-height:48px">
+<text class="jay" style="font-size:16px;color:#ffffff">周杰伦</text>
+<cover-image src="/images/aa.jpg" style="width: 48px; height:48px ;border-radius:24px"/>
+</view>
+</view>
+
+<view class="show-box">
+  <view class="show-item">
+    <image src="/images/bb.jpg"  class="head-portrait"></image>
+    <view class="show-detail">
+      <text class="name">王之焕</text>
+      <text class="desc">黄河远上白云间， 一片孤城万仞山。 羌笛何须怨杨柳， 春风不度玉门关。</text>
+      <view class="desc-pic">
+        <image mode="center" src="/images/c.jpg" class="picture1"></image>
+      </view>
+      <view class="enjoy">
+        <image src="/images/xx.png" class="admire"></image><text>7777+</text>
+        <image src="/images/pl.png" class="comment"></image><text>评论</text>
+        <image src="/images/sc.png" class="comment"></image><text>删除</text>
+      </view>
+      <view class="critic-essayist">
+        <view class="critic-item">
+          <tex class="friend-name">李白:</tex><tex class="friend-comment">故人西辞黄鹤楼，烟花三月下扬州。 孤帆远影碧空尽，惟见长江天际流。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">杜甫:</tex><tex class="friend-comment">岐王宅里寻常见，崔九堂前几度闻。 正是江南好风景，落花时节又逢君。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">王维:</tex><tex class="friend-comment">独在异乡为异客，每逢佳节倍思亲。 遥知兄弟登高处，遍插茱萸少一人。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">张继:</tex><tex class="friend-comment">月落乌啼霜满天，江枫渔火对愁眠。 姑苏城外寒山寺，夜半钟声到客船。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">崔颢:</tex><tex class="friend-comment">晴川历历汉阳树，芳草萋萋鹦鹉洲。 日暮乡关何处是，烟波江上使人愁。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李商隐:</tex><tex class="friend-comment">　君问归期未有期，巴山夜雨涨秋池。 何当共剪西窗烛，却话巴山夜雨时。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李清照:</tex><tex class="friend-comment">　昨夜雨疏风骤，浓睡不消残酒。 试问卷帘人，却道海棠依旧。知否？知否？应是绿肥红瘦</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">小明同学:</tex><tex class="friend-comment">好诗！</tex>
+        </view>
+      </view>
+      <view class="check-comment">
+        <text class="check-all">查看全部评论</text>
+        <image src="/images/sq.png" style="width: 12px;height: 10px;margin-left: 8px"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="show-item">
+    <image src="/images/cc.jpg"  class="head-portrait"></image>
+    <view class="show-detail">
+      <text class="name">李白</text>
+      <text class="desc">故人西辞黄鹤楼，烟花三月下扬州。 孤帆远影碧空尽，惟见长江天际流。</text>
+      <view class="desc-pic">
+        <image mode="center" src="/images/c.jpg" class="picture2"></image>
+        <image mode="center" src="/images/d.jpg" class="picture2"></image>
+      </view>
+      <view class="enjoy">
+        <image src="/images/xx.png" class="admire"></image><text>6666+</text>
+        <image src="/images/pl.png" class="comment"></image><text>评论</text>
+        <image src="/images/sc.png" class="comment"></image><text>删除</text>
+      </view>
+      <view class="critic-essayist">
+        <view class="critic-item">
+          <tex class="friend-name">王之焕:</tex><tex class="friend-comment">黄河远上白云间， 一片孤城万仞山。 羌笛何须怨杨柳， 春风不度玉门关。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">杜甫:</tex><tex class="friend-comment">岐王宅里寻常见，崔九堂前几度闻。 正是江南好风景，落花时节又逢君。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">王维:</tex><tex class="friend-comment">独在异乡为异客，每逢佳节倍思亲。 遥知兄弟登高处，遍插茱萸少一人。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">张继:</tex><tex class="friend-comment">月落乌啼霜满天，江枫渔火对愁眠。 姑苏城外寒山寺，夜半钟声到客船。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">崔颢:</tex><tex class="friend-comment">晴川历历汉阳树，芳草萋萋鹦鹉洲。 日暮乡关何处是，烟波江上使人愁。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李商隐:</tex><tex class="friend-comment">　君问归期未有期，巴山夜雨涨秋池。 何当共剪西窗烛，却话巴山夜雨时。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李清照:</tex><tex class="friend-comment">　昨夜雨疏风骤，浓睡不消残酒。 试问卷帘人，却道海棠依旧。知否？知否？应是绿肥红瘦</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">小明同学:</tex><tex class="friend-comment">好诗！</tex>
+        </view>
+      </view>
+      <view class="check-comment">
+        <text class="check-all">查看全部评论</text>
+        <image src="/images/sq.png" style="width: 12px;height: 10px;margin-left: 8px"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="show-item">
+    <image src="/images/dd.jpg"  class="head-portrait"></image>
+    <view class="show-detail">
+      <text class="name">杜甫</text>
+      <text class="desc">岐王宅里寻常见，崔九堂前几度闻。 正是江南好风景，落花时节又逢君。</text>
+      <view class="desc-pic">
+        <image mode="center" src="/images/e.jpg" class="picture3"></image>
+        <image mode="center" src="/images/f.jpg" class="picture3"></image>
+        <image mode="center" src="/images/g.jpg" class="picture3"></image>
+      </view>
+      <view class="enjoy">
+        <image src="/images/xx.png" class="admire"></image><text>8888+</text>
+        <image src="/images/pl.png" class="comment"></image><text>评论</text>
+        <image src="/images/sc.png" class="comment"></image><text>删除</text>
+      </view>
+      <view class="critic-essayist">
+        <view class="critic-item">
+          <tex class="friend-name">王之焕:</tex><tex class="friend-comment">黄河远上白云间， 一片孤城万仞山。 羌笛何须怨杨柳， 春风不度玉门关。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">杜甫:</tex><tex class="friend-comment">国破山河在，城春草木深，感时花溅泪，恨别鸟惊心</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">王维:</tex><tex class="friend-comment">独在异乡为异客，每逢佳节倍思亲。 遥知兄弟登高处，遍插茱萸少一人。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">张继:</tex><tex class="friend-comment">月落乌啼霜满天，江枫渔火对愁眠。 姑苏城外寒山寺，夜半钟声到客船。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">崔颢:</tex><tex class="friend-comment">晴川历历汉阳树，芳草萋萋鹦鹉洲。 日暮乡关何处是，烟波江上使人愁。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李商隐:</tex><tex class="friend-comment">　君问归期未有期，巴山夜雨涨秋池。 何当共剪西窗烛，却话巴山夜雨时。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李清照:</tex><tex class="friend-comment">　昨夜雨疏风骤，浓睡不消残酒。 试问卷帘人，却道海棠依旧。知否？知否？应是绿肥红瘦</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">小明同学:</tex><tex class="friend-comment">好诗！</tex>
+        </view>
+      </view>
+      <view class="check-comment">
+        <text class="check-all">查看全部评论</text>
+        <image src="/images/sq.png" style="width: 12px;height: 10px;margin-left: 8px"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="show-item">
+    <image src="/images/ff.jpg"  class="head-portrait"></image>
+    <view class="show-detail">
+      <text class="name">孟浩然</text>
+      <text class="desc">春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。</text>
+      <view class="desc-pic">
+        <image mode="center" src="/images/i.jpg" class="picture4"></image>
+        <image mode="center" src="/images/a.jpg" class="picture4"></image>
+        <image mode="center" src="/images/d.jpg" class="picture4"></image>
+        <image mode="center" src="/images/e.jpg" class="picture4"></image>
+      </view>
+      <view class="enjoy">
+        <image src="/images/xx.png" class="admire"></image><text>8888+</text>
+        <image src="/images/pl.png" class="comment"></image><text>评论</text>
+        <image src="/images/sc.png" class="comment"></image><text>删除</text>
+      </view>
+      <view class="critic-essayist">
+        <view class="critic-item">
+          <tex class="friend-name">王之焕:</tex><tex class="friend-comment">黄河远上白云间， 一片孤城万仞山。 羌笛何须怨杨柳， 春风不度玉门关。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">杜甫:</tex><tex class="friend-comment">国破山河在，城春草木深，感时花溅泪，恨别鸟惊心</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">王维:</tex><tex class="friend-comment">独在异乡为异客，每逢佳节倍思亲。 遥知兄弟登高处，遍插茱萸少一人。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">张继:</tex><tex class="friend-comment">月落乌啼霜满天，江枫渔火对愁眠。 姑苏城外寒山寺，夜半钟声到客船。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">崔颢:</tex><tex class="friend-comment">晴川历历汉阳树，芳草萋萋鹦鹉洲。 日暮乡关何处是，烟波江上使人愁。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李商隐:</tex><tex class="friend-comment">　君问归期未有期，巴山夜雨涨秋池。 何当共剪西窗烛，却话巴山夜雨时。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李清照:</tex><tex class="friend-comment">　昨夜雨疏风骤，浓睡不消残酒。 试问卷帘人，却道海棠依旧。知否？知否？应是绿肥红瘦</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">小明同学:</tex><tex class="friend-comment">好诗！</tex>
+        </view>
+      </view>
+      <view class="check-comment">
+        <text class="check-all">查看全部评论</text>
+        <image src="/images/sq.png" style="width: 12px;height: 10px;margin-left: 8px"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="show-item">
+    <image src="/images/gg.jpg"  class="head-portrait"></image>
+    <view class="show-detail">
+      <text class="name">李清照</text>
+      <text class="desc">　昨夜雨疏风骤，浓睡不消残酒。 试问卷帘人，却道海棠依旧。知否？知否？应是绿肥红瘦</text>
+      <view class="desc-pic">
+        <image mode="center" src="/images/i.jpg" class="picture7"></image>
+        <image mode="center" src="/images/b.jpg" class="picture7"></image>
+        <image mode="center" src="/images/c.jpg" class="picture7"></image>
+        <image mode="center" src="/images/d.jpg" class="picture7"></image>
+        <image mode="center" src="/images/e.jpg" class="picture7"></image>
+        <image mode="center" src="/images/f.jpg" class="picture7"></image>
+        <image mode="center" src="/images/g.jpg" class="picture7"></image>
+      </view>
+      <view class="enjoy">
+        <image src="/images/xx.png" class="admire"></image><text>11111+</text>
+        <image src="/images/pl.png" class="comment"></image><text>评论</text>
+        <image src="/images/sc.png" class="comment"></image><text>删除</text>
+      </view>
+      <view class="critic-essayist">
+        <view class="critic-item">
+          <tex class="friend-name">王之焕:</tex><tex class="friend-comment">黄河远上白云间， 一片孤城万仞山。 羌笛何须怨杨柳， 春风不度玉门关。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">杜甫:</tex><tex class="friend-comment">国破山河在，城春草木深，感时花溅泪，恨别鸟惊心</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">王维:</tex><tex class="friend-comment">独在异乡为异客，每逢佳节倍思亲。 遥知兄弟登高处，遍插茱萸少一人。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">张继:</tex><tex class="friend-comment">月落乌啼霜满天，江枫渔火对愁眠。 姑苏城外寒山寺，夜半钟声到客船。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">崔颢:</tex><tex class="friend-comment">晴川历历汉阳树，芳草萋萋鹦鹉洲。 日暮乡关何处是，烟波江上使人愁。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李商隐:</tex><tex class="friend-comment">　君问归期未有期，巴山夜雨涨秋池。 何当共剪西窗烛，却话巴山夜雨时。</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">李清照:</tex><tex class="friend-comment">　昨夜雨疏风骤，浓睡不消残酒。 试问卷帘人，却道海棠依旧。知否？知否？应是绿肥红瘦</tex>
+        </view>
+        <view class="critic-item">
+          <tex class="friend-name">小明同学:</tex><tex class="friend-comment">好诗！</tex>
+        </view>
+      </view>
+      <view class="check-comment">
+        <text class="check-all">查看全部评论</text>
+        <image src="/images/sq.png" style="width: 12px;height: 10px;margin-left: 8px"/>
+      </view>
+    </view>
   </view>
 </view>
